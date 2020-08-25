@@ -25,3 +25,8 @@ body {
 .hide {
     display: none;
 }
+.jumbotron {
+    background-color: rgb(74, 73, 73);
+    color: rgb(198, 198, 198);
+    margin-top: 6rem;
+}
