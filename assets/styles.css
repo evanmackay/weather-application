@@ -1,3 +1,23 @@
 body {
     background-image: url(./sunnyday.jpg);
 }
+
+.lowUV {
+    color: green;
+}
+
+.lowMedUV {
+    color: rgb(176, 176, 35);
+}
+
+.medUV {
+    color: orange;
+}
+
+.highUV {
+    color: red;
+}
+
+.dangerous {
+    color: violet;
+}
