@@ -9,7 +9,7 @@
         url: queryURL,
         method: 'GET'
     }).then(function(response) {
-        console.log(response)
+        // console.log(response)
         let h3El = $('<h3>')
         let h5El = $('<h5>')
         let imageEl = $('<img>')
@@ -29,7 +29,7 @@
                 url: uVIndexQueryURL,
                 method: 'GET'
             }).then(function(response){
-                console.log(response)
+                // console.log(response)
                 let uVIndex = response.value
                 let fifthPEl = $('<p>')
                 fifthPEl.text('UV Index: ' + uVIndex)
@@ -58,7 +58,7 @@
         secondPEl.text('Wind Speed: ' + windSpeed)
         thirdPEl.text('Humidity: ' + cityHumidity + '%')
         imageEl.attr('src', 'https://openweathermap.org/img/wn/' + weatherConditions + "@2x.png")
-        console.log(h3El)
+        // console.log(h3El)
         $('#weather-results').prepend(h3El, h5El, imageEl, pEl, secondPEl, thirdPEl)
         buildFutureForecast()
         function buildFutureForecast(){
@@ -67,9 +67,9 @@
                 url: futureConditionsURL,
                 method: 'GET'
             }).then(function(response){
-                console.log(response)
+                // console.log(response)
                 for (let i = 0; i < 5; i++) {
-                    console.log(response.list[i])
+                    // console.log(response.list[i])
                 }
                 let futureImgEl1 = $('<img>')
                 let futureImgEl2 = $('<img>')
@@ -148,9 +148,7 @@
         
         cityItem.unshift(userCity)
         localStorage.setItem('city', JSON.stringify(cityItem))
-        console.log(cityItem)
-        // 
-
+        // console.log(cityItem)
     })
     resultHistory()
     function resultHistory() {
@@ -162,16 +160,22 @@
         }
         let searchHistory = $('#search-history')
         for (let i = 0; i < searchedCity.length; i++) {
-            console.log(searchedCity[i])
+            // console.log(searchedCity[i])
             let listItem = $('<a>')
             
             listItem.attr('class', 'list-group-item list-group-item-action')
+
             
             listItem.text(searchedCity[i])
-            console.log(listItem)
+            listItem.attr('value', searchedCity[i])
+            // console.log(listItem)
             searchHistory.prepend(listItem)
         }
         
         
     }
+    $('.list-group-item').click(function(event) {
+        let buttonValue = event.currentTarget.value
+        console.log(buttonValue)
+    })
 // localStorage.setItem('city', '["Austin", "Dallas", "Los Angeles"]')
