@@ -14,7 +14,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-xl-12">
-                <div class="jumbotron">
+                <div class="jumbotron" id="jumbotron">
                     <h1 class="display-4">Local Weather</h1>
                     <p class="lead">Search your city below to find out what the weather is in your area.</p>
                     <hr class="my-4">
@@ -24,11 +24,14 @@
                         <input type="button" value="search" class="btn btn-primary" id="search-btn">
                     </form>
                     <!-- new div to have information appended to for current weather-->
-                    <div class="container col-12" id="weather-results">
+                    <div class="row">
+                        <div class="container col-4" id="weather-results">
                         
-                    </div>
-                    <div class="container col-12" id="future-weather-conditions">
+                        </div>
+                        <div class="container col-4" id="future-weather-conditions">
                         <h3 class="hide" id="five-day-forecast">Five Day Forecast</h3>
+                        </div>
+                        <div class="container col-4" id="future-weather-conditions-2"></div>
                     </div>
                     <hr class="my-4">
                     <div class="list-group">

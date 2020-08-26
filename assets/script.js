@@ -5,8 +5,11 @@
 
     $('#search-btn').click(function(event) {
         event.preventDefault()
-        $('#five-day-forecast').attr('class', '')
         $('#weather-results').empty()
+        $('#future-weather-conditions').empty()
+        $('#future-weather-conditions-2').empty()
+        $('#five-day-forecast').attr('class', ' ')
+
         let userCity = $('#city-info').val()
         let queryURL = 'https://cors-anywhere.herokuapp.com/api.openweathermap.org/data/2.5/weather?q=' + userCity + '&appid=d644c611094dc7dd7284b7999b0f199f'
         $.ajax({
@@ -51,7 +54,7 @@
                         fifthPEl.text('UV Index: ' + uVIndex + ' High')
                     } else {
                         fifthPEl.attr('class', 'dangerous')
-                        fifthPEl.text('UV Index: ' + uVIndex + ' Dangerous')
+                        fifthPEl.text('UV Index: ' + uVIndex + ' Very High')
                     }
                     $('#weather-results').append(fifthPEl)
                 })
@@ -130,7 +133,8 @@
                     futureHumidityPEl3.text('Humidity: ' + futureHumidity3 + '%')
                     futureHumidityPEl4.text('Humidity: ' + futureHumidity4 + '%')
                     futureHumidityPEl5.text('Humidity: ' + futureHumidity5 + '%')
-                    $('#future-weather-conditions').append(futureDate1, futureImgEl1, futurePEl1, futureHumidityPEl1, futureDate2, futureImgEl2, futurePEl2, futureHumidityPEl2, futureDate3, futureImgEl3, futurePEl3, futureHumidityPEl3, futureDate4, futureImgEl4, futurePEl4, futureHumidityPEl4, futureDate5, futureImgEl5, futurePEl5, futureHumidityPEl5)
+                    $('#future-weather-conditions').append(futureDate1, futureImgEl1, futurePEl1, futureHumidityPEl1, futureDate3, futureImgEl3, futurePEl3, futureHumidityPEl3, futureDate5, futureImgEl5, futurePEl5, futureHumidityPEl5)
+                    $('#future-weather-conditions-2').append(futureDate2, futureImgEl2, futurePEl2, futureHumidityPEl2,futureDate4, futureImgEl4, futurePEl4, futureHumidityPEl4)
                 })
             }
         })
