@@ -25,8 +25,17 @@ body {
 .hide {
     display: none;
 }
+
+.show {
+    display: initial;
+}
+
 .jumbotron {
     background-color: rgb(127, 126, 126);
     color: rgb(224, 221, 221);
     margin-top: 6rem;
+}
+
+#weather-results {
+    font-size: 20px;
 }

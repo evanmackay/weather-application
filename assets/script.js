@@ -8,7 +8,7 @@
         $('#weather-results').empty()
         $('#future-weather-conditions').empty()
         $('#future-weather-conditions-2').empty()
-        $('#five-day-forecast').attr('class', ' ')
+        
 
         let userCity = $('#city-info').val()
         let queryURL = 'https://cors-anywhere.herokuapp.com/api.openweathermap.org/data/2.5/weather?q=' + userCity + '&appid=d644c611094dc7dd7284b7999b0f199f'
